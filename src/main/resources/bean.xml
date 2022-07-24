@@ -3,5 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="person" class="com.shixin.bean.Person"/>
+    <bean id="person" class="com.shixin.bean.person.Person">
+        <property name="name" value="shixin"/>
+        <property name="age" value="18"/>
+    </bean>
+    <bean id="demoDaoMySql" class="com.shixin.dao.impl.DemoDaoMySqlImpl"/>
+    <bean id="demoDaoOracle" class="com.shixin.dao.impl.DemoDaoOracleImpl"/>
+    <bean class="com.shixin.bean.person.Dog">
+        <property name="name" value="小黑"/>
+        <property name="owner" ref="person"/>
+    </bean>
+    <bean id="black" class="com.shixin.bean.color.Black"/>
+    <bean id="white" class="com.shixin.bean.color.White"/>
+    <bean id="green" class="com.shixin.bean.color.Green"/>
 </beans>
